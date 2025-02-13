@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ</title>
+    <link rel="icon" type="image/png" href="images/FootballLogo.png">
+  <link rel="stylesheet" href="query.css">
+  <script>
+    //validation process
+    function getSelectedValue(selectList) {
+      return selectList[selectList.selectedIndex].value;
+    }
+    function validateform() {
+      function emailValidation(gmail) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail)
+        }
+
+      let name = document.forms["footballQuery"]["name"].value;
+      if (name == null || name == "") {
+        alert("Please enter your name");
+        return false;
+      }
+      let customerEmail = document.forms["footballQuery"]["email"].value;
+      if (customerEmail == "") {
+        alert("Please write a valid email");
+        return false;
+      }
+      if (emailValidation(customerEmail) == false){
+                alert("Please enter a valid Email");
+                return false;
+            }
+      let selectList = document.forms["footballQuery"]["subject"].value;
+      if (selectList == "select"){
+        alert("Please choose a subject");
+        return false;
+      }
+
+      let details = document.forms["footballQuery"]["details"].value;
+      if (details == null || details == "") {
+        alert("please provide some details");
+        return false;
+      }
+      
+    }
+  </script>
+</head>
+
+<body>
+  <!--header-->
+  <section class="sub-header">
+
+    <nav>
+      <a href="index.html"><img src="images/FootballLogo.png" alt="logo"></a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="index.html">TRANG CHỦ</a></li>
+              <li><a href="content.html">DANH SÁCH ĐỘI BÓNG</a></li>
+              <li><a href="query.html">LIÊN HỆ</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1>LIÊN HỆ VỚI CHÚNG TÔI NẾU BẠN MUỐN VÀO ĐỘI BÓNG =]]]</h1>
+  </section>
+
+
+  <!--form-->
+  <div class="contact-us">
+    <!--start of contact class-->
+
+    <form action="mailto:w1633664@westminster.ac.uk" enctype="text/plain" method="post" name="footballQuery">
+      <div id="form">
+        <!-- start of div form-->
+        <label for="name"> Name</label>
+        <input type="text" name="Name" id="name" placeholder="Full name ">
+        <label for="email"> Email</label>
+        <input type="email" name="email" id="email" placeholder="example@email.com">
+        <label for="subject">Subject</label>
+        <select name="Subject" id="subject">
+          <option value="select">Select A Query Subject</option>
+          <option value="Order Updates">Order Updates</option>
+          <option value="Mising Products">Missing Products</option>
+          <option value="Review">Review</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="details">Details </label>
+        <textarea name="details" id="details" cols="43" rows="5"></textarea>
+
+        <button onclick=validateform() type="button" id="checkDetails" class="hero-btn" >Check Details</button>
+
+
+      </div> <!-- end of div form -->
+
+
+      <!--edit button-->
+
+      <div id="edit">
+        <!-- start of displayForm -->
+        <p><u>Name</u> <span id="nameDisplay"></span></p>
+        <p><u>Email</u> <span id="emailDisplay"></span></p>
+        <p><u>Subject</u> <span id="subjectDisplay"></span></p>
+        <p><u>Details</u> <span id="detailsDisplay"></span></p>
+
+        <button type="button" id="editDetails" class="hero-btn">Edit Details</button>
+        <button type="submit" class="hero-btn">Submit Details</button>
+
+
+      </div>
+
+
+    </form>
+  </div>
+
+
+  <!--start of javascript-->
+  <script>
+    // get the select list
+    function getSelectedValue(selectList) {
+      return selectList[selectList.selectedIndex].value;
+    }
+    //changing the input pages 
+    document.getElementById("checkDetails").addEventListener("click", function () {
+      let customerName = document.getElementById("name").value;
+      document.getElementById("nameDisplay").innerHTML = customerName;
+      let customerEmail = document.getElementById("email").value;
+      document.getElementById("emailDisplay").innerHTML = customerEmail;
+      let querySubject = getSelectedValue(document.getElementById("subject"));
+      document.getElementById("subjectDisplay").innerHTML = querySubject;
+      let queryDetail = document.getElementById("details").value;
+      document.getElementById("detailsDisplay").innerHTML = queryDetail;
+
+      //email validation
+      function emailIsValid(gmail) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail)
+            }
+
+      // to check if the requirements have been met
+      if (customerName != "" && customerEmail != "" && queryDetail != "" && emailIsValid(customerEmail) != false && querySubject != "select") {
+        document.getElementById("form").style.display = "none";
+        document.getElementById("edit").style.display = "block";
+      }
+    });
+    document.getElementById("editDetails").addEventListener("click", function () {
+      document.getElementById("form").style.display = "block";
+      document.getElementById("edit").style.display = "none";
+    });
+  </script>
+
+
+</body>
+
+</html>
