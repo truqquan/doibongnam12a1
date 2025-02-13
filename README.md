@@ -1,11 +1,3 @@
-This project can be viewed by downloading the zip and opening the individual htmls.
+Website Giới Thiệu Đội Bóng 12A1
 
-please note this was a group project so some of the links will direct you to the other group members webpages and this will ask you to sign in to an alternative website. 
-
-the webpages you will have access to is:
-
-- content.html
-- index.html
-- query.html
-
-please test my Query HTML to see how i performed using javascript and i would love some feedback.
+Đây là trang web giới thiệu về đội bóng lớp 12A1, ghi lại hành trình tham gia các giải đấu từ năm 2022 đến 2025. Website cung cấp thông tin về lịch sử đội bóng, các trận đấu, hình ảnh, cũng như những khoảnh khắc đáng nhớ trong suốt quá trình thi đấu.
