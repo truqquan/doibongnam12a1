@@ -17,6 +17,10 @@
 html{
   scroll-behavior: smooth;
 }
+body {
+  background-color: black;
+  color: white; /* Ensure text is visible */
+}
 
 nav{
   display: flex;
