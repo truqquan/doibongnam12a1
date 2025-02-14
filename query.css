@@ -9,7 +9,7 @@ html{
   scroll-behavior: smooth;
 }
 body {
-  background-color: black;
+  background-color: #18191A;
   color: white; /* Ensure text is visible */
 }
 
@@ -102,7 +102,7 @@ label{
   font-size: 20px;
  
   margin-bottom: 20px;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 400;
 }
 
@@ -176,3 +176,5 @@ label{
   margin-top: 20px;
   font-weight: 600;
 }
+
+
