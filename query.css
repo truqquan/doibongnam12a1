@@ -27,9 +27,18 @@ body {
 
 .container {
   flex: 0 1 700px;
-  margin: auto;
+  margin-left: 100px;
+  margin-top: 180px;
   padding: 10px;
 }
+
+.capy {
+  margin-left: 100px;
+  margin-top: 180px;
+  width: 500px;  /* Adjust size as needed */
+  height: 500px; /* Ensures a square shape */
+}
+
 
 .screen {
   position: relative;
@@ -182,30 +191,7 @@ body {
   color: #b9134f;
 }
 
-.credits {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  color: #ffa4bd;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 16px;
-  font-weight: normal;
-}
 
-.credits-link {
-  display: flex;
-  align-items: center;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.dribbble {
-  width: 20px;
-  height: 20px;
-  margin: 0 5px;
-}
 
 @media screen and (max-width: 520px) {
   .screen-body {
