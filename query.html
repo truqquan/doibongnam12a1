@@ -2,45 +2,12 @@
 <html lang="vi">
 
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Liên Hệ</title>
   <link rel="icon" type="image/png" href="images/FootballLogo.png">
   <link rel="stylesheet" href="query.css">
-  <script>
-    function layGiaTriLuaChon(selectList) {
-      return selectList[selectList.selectedIndex].value;
-    }
-    
-    function xacThucForm() {
-      function kiemTraEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      let ten = document.forms["footballQuery"]["name"].value;
-      if (!ten.trim()) {
-        alert("Vui lòng nhập họ và tên của bạn.");
-        return false;
-      }
-
-      let email = document.forms["footballQuery"]["email"].value;
-      if (!email.trim() || !kiemTraEmail(email)) {
-        alert("Vui lòng nhập địa chỉ email hợp lệ.");
-        return false;
-      }
-
-      let chuDe = document.forms["footballQuery"]["subject"].value;
-      if (chuDe === "select") {
-        alert("Vui lòng chọn chủ đề phù hợp.");
-        return false;
-      }
-
-      let chiTiet = document.forms["footballQuery"]["details"].value;
-      if (!chiTiet.trim()) {
-        alert("Vui lòng cung cấp thông tin chi tiết về yêu cầu của bạn.");
-        return false;
-      }
-    }
-  </script>
+ 
 </head>
 
 <body>
@@ -58,69 +25,59 @@
     <h1>LIÊN HỆ VỚI CHÚNG TÔI NẾU BẠN MUỐN VÀO ĐỘI BÓNG =]]]</h1>
   </section>
 
-  <div class="contact-us">
-    <form action="mailto:w1633664@westminster.ac.uk" enctype="text/plain" method="post" name="footballQuery">
-      <div id="form">
-        <label for="name">Họ và Tên</label>
-        <input type="text" name="name" id="name" placeholder="Nhập họ và tên">
+  <form action="https://api.web3forms.com/submit" method="POST">
 
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="example@email.com">
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="da030294-41e7-4df9-90de-9a585c132d5a">
 
-        <label for="subject">Chủ đề</label>
-        <select name="subject" id="subject">
-          <option value="select">Chọn chủ đề yêu cầu</option>
-          <option value="Order Updates">Cập nhật đơn hàng</option>
-          <option value="Missing Products">Thiếu sản phẩm</option>
-          <option value="Review">Đánh giá</option>
-          <option value="Other">Khác</option>
-        </select>
+    <div class="background">
+      <div class="container">
+        <div class="screen">
+          <div class="screen-header">
+            <div class="screen-header-left">
+              <div class="screen-header-button close"></div>
+              <div class="screen-header-button maximize"></div>
+              <div class="screen-header-button minimize"></div>
+            </div>
+            <div class="screen-header-right">
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+              <div class="screen-header-ellipsis"></div>
+            </div>
+          </div>
+          <div class="screen-body">
+            <div class="screen-body-item left">
+              <div class="app-title">
+                <span>LIÊN HỆ</span>
+                <span>CHÚNG TÔI</span>
+              </div>
+              <div class="app-contact">Gửi đến: vip24092007@gmail.com</div>
+            </div>
+            <div class="screen-body-item">
+              <div class="app-form">
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="Họ và tên" type="text" name="class" required>
+                </div>
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="Lớp" type="text" name="name" required>
+                </div>
+                <div class="app-form-group">
+                  <input class="app-form-control" placeholder="Gmail" type="text" name="gmail" required>
+                </div>
+                <div class="app-form-group message">
+                  <input class="app-form-control" placeholder="Tin nhắn" type="text" name="message" required>
+                </div>
+                <div class="app-form-group buttons">
+                  <button class="app-form-button" type="submit">GỬI</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <label for="details">Chi tiết</label>
-        <textarea name="details" id="details" cols="43" rows="5" placeholder="Nhập chi tiết yêu cầu của bạn"></textarea>
-
-        <button onclick="xacThucForm()" type="button" id="kiemTraThongTin" class="hero-btn">Kiểm tra thông tin</button>
       </div>
-
-      <div id="edit" style="display: none;">
-        <p><u>Họ và Tên:</u> <span id="tenHienThi"></span></p>
-        <p><u>Email:</u> <span id="emailHienThi"></span></p>
-        <p><u>Chủ đề:</u> <span id="chuDeHienThi"></span></p>
-        <p><u>Chi tiết:</u> <span id="chiTietHienThi"></span></p>
-
-        <button type="button" id="chinhSuaThongTin" class="hero-btn">Chỉnh sửa</button>
-        <button type="submit" class="hero-btn">Gửi yêu cầu</button>
-      </div>
-    </form>
-  </div>
-
-  <script>
-    document.getElementById("kiemTraThongTin").addEventListener("click", function () {
-      let ten = document.getElementById("name").value.trim();
-      let email = document.getElementById("email").value.trim();
-      let chuDe = layGiaTriLuaChon(document.getElementById("subject"));
-      let chiTiet = document.getElementById("details").value.trim();
-
-      function kiemTraEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-      }
-
-      if (ten && email && chiTiet && kiemTraEmail(email) && chuDe !== "select") {
-        document.getElementById("tenHienThi").innerText = ten;
-        document.getElementById("emailHienThi").innerText = email;
-        document.getElementById("chuDeHienThi").innerText = chuDe;
-        document.getElementById("chiTietHienThi").innerText = chiTiet;
-
-        document.getElementById("form").style.display = "none";
-        document.getElementById("edit").style.display = "block";
-      }
-    });
-
-    document.getElementById("chinhSuaThongTin").addEventListener("click", function () {
-      document.getElementById("form").style.display = "block";
-      document.getElementById("edit").style.display = "none";
-    });
-  </script>
+    </div>
+  </form>
 </body>
 
 </html>
